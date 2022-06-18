@@ -414,7 +414,8 @@ form .field textarea {
 	resize: none;
 }
 
-form .field :where(input, textarea) {
+form .field input,
+form .field textarea {
 	border-radius: 12px;
 	border: 2px solid #ffdbc8;
 	padding: 1.5em 1em;
@@ -426,11 +427,13 @@ form .field :where(input, textarea) {
 	outline: 0;
 }
 
-form .field :where(input, textarea)::placeholder {
+form .field input::placeholder,
+form .field textarea::placeholder {
 	color: #c8c8c8;
 }
 
-form .field :where(input, textarea):focus {
+form .field input:focus,
+form .field textarea:focus {
 	outline: 3px solid #ffdbc8;
 }
 
