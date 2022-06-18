@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500&family=Poppins:wght@500;600;700;800&display=swap');
-html {
+
+:root {
 	scroll-behavior: smooth;
 }
 
@@ -18,14 +19,16 @@ h2,
 h3,
 h4,
 figcaption,
-button {
+button,
+label {
 	font-family: 'Poppins', sans-serif;
 }
 
 h1,
 h2,
 h3,
-h4 {
+h4,
+label {
 	color: #feaf84;
 }
 
@@ -49,6 +52,11 @@ p {
 	font-size: 1.2em;
 }
 
+dfn {
+	font-style: normal;
+	font-weight: 500;
+}
+
 body {
 	max-width: 1600px;
 	margin: auto;
@@ -56,11 +64,10 @@ body {
 }
 
 *.container {
-	width: 85%;
+	width: 90%;
 	margin: auto;
 }
 
-/* Header Rules Start */
 nav {
 	width: 100%;
 	height: 80px;
@@ -88,7 +95,7 @@ nav .container {
 	color: #feaf84;
 }
 
-.navbar-link {
+.navbar-link-container {
 	background-color: rgba(255, 255, 255, 0.9);
 	box-shadow: 0px 2px 10px rgba(255, 191, 156, 0.4);
 	display: flex;
@@ -105,19 +112,20 @@ nav .container {
 	overflow: hidden;
 }
 
-.navbar-link.showNav {
+.navbar-link-container.showNav {
 	opacity: 1;
 	height: 200px;
 }
 
-.navbar-link a {
+.link-item a {
 	color: #7c7c7c;
 	font-size: 1.1em;
 	font-weight: 500;
 	transition: 0.3s linear;
 }
 
-.navbar-link a:hover {
+.link-item a:hover,
+.link-item.active a {
 	color: #feaf84;
 }
 
@@ -199,9 +207,8 @@ nav .container {
 }
 
 .introduction-text p {
-	width: 80%;
+	width: 100%;
 	margin: 1em auto 1.5em;
-
 	font-size: 1.2em;
 }
 
@@ -222,9 +229,7 @@ nav .container {
 	background-color: #f9b48f;
 	box-shadow: 0 0 10px 10px rgba(255, 191, 156, 0.5);
 }
-/* Header Rules End */
 
-/* Main Rules Start */
 main {
 	margin: 100px auto;
 	padding: 3em 0;
@@ -236,7 +241,8 @@ main .container {
 }
 
 #benefits,
-#criteria {
+#criteria,
+#menu {
 	margin-bottom: 100px;
 }
 
@@ -252,19 +258,28 @@ main .container {
 
 #benefits > p,
 #criteria > p,
-#menu > p {
+#menu > p,
+#contact > p {
+	margin-top: 0.6em;
 	margin-bottom: 2em;
 }
 
 .card {
 	background-color: white;
 	border-radius: 10px;
-	filter: drop-shadow(0px 4px 10px rgba(255, 191, 156, 0.5));
+	filter: drop-shadow(0px 4px 10px rgba(255, 191, 156, 0.2));
 	margin: 1em auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	transition: 0.3s ease;
+	cursor: pointer;
+}
+
+.card:hover {
+	transform: scale(1.01);
+	filter: drop-shadow(0px 4px 10px 10px rgba(255, 191, 156, 0.2));
 }
 
 #benefits .card,
@@ -309,6 +324,8 @@ aside img {
 
 aside .card {
 	padding: 4em 2em;
+	position: sticky;
+	top: 100px;
 }
 
 aside section {
@@ -349,9 +366,9 @@ aside p {
 
 #menu figcaption {
 	position: absolute;
-	bottom: 24px;
-	left: 50%;
-	transform: translateX(-50%);
+	bottom: 30px;
+	padding: 0 1.5em;
+	/* transform: translateX(-50%); */
 	font-weight: 500;
 	z-index: 2;
 	color: white;
@@ -365,8 +382,9 @@ aside p {
 
 #menu .card p {
 	font-size: 1.1em;
-	padding: 2em 2em;
+	padding: 2em 1.5em;
 	text-align: justify;
+	line-height: 2;
 }
 
 #menu .card img {
@@ -374,7 +392,47 @@ aside p {
 	border-top-right-radius: 10px;
 	line-height: 0;
 }
-/* Main Rules End */
+
+form {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+form > section {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	margin-bottom: 1em;
+}
+
+form .field input {
+	height: 30px;
+}
+
+form .field textarea {
+	resize: none;
+}
+
+form .field :where(input, textarea) {
+	border-radius: 12px;
+	border: 2px solid #ffdbc8;
+	padding: 1.5em 1em;
+	margin-top: 0.5em;
+	font-family: 'Nunito', sans-serif;
+	color: #c8c8c8;
+	font-weight: 400;
+	font-size: 1.1em;
+	outline: 0;
+}
+
+form .field :where(input, textarea)::placeholder {
+	color: #c8c8c8;
+}
+
+form .field :where(input, textarea):focus {
+	outline: 3px solid #ffdbc8;
+}
 
 footer {
 	height: 100px;
@@ -409,8 +467,22 @@ footer .social-media a:not(:last-child) {
 	margin-right: 10px;
 }
 
+@media screen and (min-width: 480px) {
+	.container {
+		width: 85%;
+	}
+
+	.introduction-text p {
+		width: 80%;
+	}
+}
+
 @media screen and (min-width: 768px) {
-	.navbar-link {
+	.container {
+		width: 88%;
+	}
+
+	.navbar-link-container {
 		opacity: 1;
 		position: static;
 		background-color: transparent;
@@ -422,11 +494,11 @@ footer .social-media a:not(:last-child) {
 		padding: 0;
 	}
 
-	.navbar-link li {
+	.navbar-link-container li {
 		display: inline-block;
 	}
 
-	.navbar-link li:not(:last-child) {
+	.navbar-link-container li:not(:last-child) {
 		margin-right: 3em;
 	}
 
@@ -450,7 +522,7 @@ footer .social-media a:not(:last-child) {
 	}
 
 	.introduction-text p {
-		width: 80%;
+		width: 70%;
 		margin-left: 0;
 	}
 
@@ -478,6 +550,10 @@ footer .social-media a:not(:last-child) {
 	#menu .card:nth-child(3) figure {
 		margin-top: -30px;
 	}
+
+	form {
+		width: 80%;
+	}
 }
 
 @media screen and (min-width: 900px) {
@@ -494,8 +570,7 @@ footer .social-media a:not(:last-child) {
 		font-size: 2.2em;
 	}
 
-	.introduction-text p,
-	#content > p {
+	.introduction-text p {
 		font-size: 1.5em;
 	}
 
@@ -513,13 +588,15 @@ footer .social-media a:not(:last-child) {
 
 	#benefits > h2,
 	#criteria > h2,
-	#menu > h2 {
+	#menu > h2,
+	#contact > h2 {
 		text-align: left;
 	}
 
 	#benefits > p,
 	#criteria > p,
-	#menu > p {
+	#menu > p,
+	#contact > p {
 		width: 80%;
 		text-align: left;
 	}

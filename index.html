@@ -9,16 +9,18 @@
   <link rel="stylesheet" href="sources/css/style.css">
 </head>
 
-<body id="home">
-  <!-- Start Header -->
+<body id="home" class="nav-link-content">
+  <!-- Header Start -->
   <header>
     <nav>
       <div class="container">
-        <a href="#home" class="navbar-brand"><span>FOOD</span>KU</a>
-        <ul class="navbar-link">
-          <li><a href="#benefits">Benefits</a></li>
-          <li><a href="#criteria">Criteria</a></li>
-          <li><a href="#menu">Menu</a></li>
+        <h2 class="navbar-brand"><span>FOOD</span>KU</h2>
+        <ul class="navbar-link-container">
+          <li class="link-item home active"><a href="#home">Home</a></li>
+          <li class="link-item benefits"><a href="#benefits">Benefits</a></li>
+          <li class="link-item criteria"><a href="#criteria">Criteria</a></li>
+          <li class="link-item menu"><a href="#menu">Menu</a></li>
+          <li class="link-item contact"><a href="#contact">Contact</a></li>
         </ul>
         <div id="menu-toggle">
           <input type="checkbox" id="toggler">
@@ -39,24 +41,24 @@
       </div>
     </div>
   </header>
-  <!-- End Header -->
+  <!-- Header End -->
 
-  <!-- Start Main -->
+  <!-- Main Start -->
   <main>
     <div class="container">
       <div id="content">
-        <article id="benefits">
+        <article id="benefits" class="nav-link-content">
           <h2>Benefits of Consuming Healthy Food</h2>
           <p>
             Actually so many benefits are obtained by consuming healthy foods, especially for your body. These are some
-            of them:
+            of them.
           </p>
 
           <div class="cards">
             <section class="card">
               <img src="sources/images/weight-scale-solid.svg" alt="weight">
               <h3>Lose & Maintain Weight</h3>
-              <p>fruit, vegetables, lean protein, and whole grains are useful to replace high-calorie foods so that they
+              <p>Fruit, vegetables, lean protein, and whole grains are useful to replace high-calorie foods so that they
                 can make you full longer.</p>
             </section>
 
@@ -82,11 +84,12 @@
           </div>
         </article>
 
-        <article id="criteria">
+        <article id="criteria" class="nav-link-content">
           <h2>Healthy Food Criteria</h2>
           <p>
-            Healthy food criteria help us to determine what foods deserve to be called healthy foods. Following are some
-            of them:
+            Healthy food criteria help us to determine what foods deserve to be called healthy foods. The Following are
+            some
+            of them.
           </p>
 
           <div class="cards">
@@ -94,7 +97,7 @@
               <img src="sources/images/flask-vial-solid.svg" alt="chemicals">
               <h3>Doesn’t Contain Excessive Chemicals</h3>
               <p>
-                so that it can be said to be healthy food, food should not contain chemicals. Because it can have a
+                So that it can be said to be healthy food, food should not contain chemicals. Because it can have a
                 negative impact on the health of the body's organs.
               </p>
             </section>
@@ -116,7 +119,7 @@
           </div>
         </article>
 
-        <article id="menu">
+        <article id="menu" class="nav-link-content">
           <h2>Healthy Food Menu</h2>
           <p>
             Well, after knowing the benefits and criteria of healthy food. The following is a menu dish that is included
@@ -130,7 +133,8 @@
                 <figcaption>Avocados</figcaption>
               </figure>
               <p>
-                Avocado is a fruit that is very rich in nutrients: fiber, vitamins, minerals, and fats (healthy fats)
+                <dfn>Avocado</dfn> is a fruit that is very rich in nutrients: fiber, vitamins, minerals, and fats
+                (healthy fats)
                 that can reduce inflammation in the body.
               </p>
             </div>
@@ -140,7 +144,8 @@
                 <figcaption>Yogurts</figcaption>
               </figure>
               <p>
-                Yogurt contains probiotics that are healthy for the intestines and digestive system. In addition, there
+                <dfn>Yogurt</dfn> contains probiotics that are healthy for the intestines and digestive system. In
+                addition, there
                 are also other ingredients that are very good for the body, namely calcium and zinc.
               </p>
             </div>
@@ -150,11 +155,33 @@
                 <figcaption>Oatmeals</figcaption>
               </figure>
               <p>
-                Oatmeal is a superfood that is usually eaten for breakfast. The high fiber content in oatmeal is very
+                <dfn>Oatmeal</dfn> is a superfood that is usually eaten for breakfast. The high fiber content in oatmeal
+                is very
                 good for the digestive system.
               </p>
             </div>
           </div>
+        </article>
+
+        <article id="contact" class="nav-link-content">
+          <h2>Contact Us</h2>
+          <p>If you need more information, you can directly send messages through the form below.</p>
+
+          <form action="" method="post">
+            <section class="field">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" placeholder="exp: darmayasadiputra@gmail.com">
+            </section>
+            <section class="field">
+              <label for="name">Name</label>
+              <input type="text" name="name" id="name" placeholder="exp: I Kadek Darmayasa Adi Putra">
+            </section>
+            <section class="field">
+              <label for="messages">Messages</label>
+              <textarea name="messages" id="messages" cols="30" rows="12" placeholder="messages..."></textarea>
+            </section>
+          </form>
+
         </article>
       </div>
 
@@ -183,9 +210,9 @@
       </aside>
     </div>
   </main>
-  <!-- End Main -->
+  <!-- Main Start -->
 
-  <!-- Start Footer -->
+  <!-- Footer Start -->
   <footer>
     <div class="container">
       <p>&copy;2022 FOODKU, Indonesia. All Rights Reserved</p>
@@ -197,7 +224,7 @@
       </div>
     </div>
   </footer>
-  <!-- End Footer -->
+  <!-- Footer End -->
 
   <script src=" sources/js/script.js"></script>
 </body>
