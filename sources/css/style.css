@@ -20,7 +20,8 @@ h3,
 h4,
 figcaption,
 button,
-label {
+label,
+input[type='submit'] {
 	font-family: 'Poppins', sans-serif;
 }
 
@@ -212,7 +213,8 @@ nav .container {
 	font-size: 1.2em;
 }
 
-.introduction-text button {
+.introduction-text button,
+input[type='submit'] {
 	border: 0;
 	font-size: 1em;
 	padding: 1em 3.5em;
@@ -225,7 +227,8 @@ nav .container {
 	cursor: pointer;
 }
 
-.introduction-text button:hover {
+.introduction-text button:hover,
+input[type='submit']:hover {
 	background-color: #f9b48f;
 	box-shadow: 0 0 10px 10px rgba(255, 191, 156, 0.5);
 }
@@ -368,7 +371,6 @@ aside p {
 	position: absolute;
 	bottom: 30px;
 	padding: 0 1.5em;
-	/* transform: translateX(-50%); */
 	font-weight: 500;
 	z-index: 2;
 	color: white;
@@ -435,6 +437,13 @@ form .field textarea::placeholder {
 form .field input:focus,
 form .field textarea:focus {
 	outline: 3px solid #ffdbc8;
+}
+
+form input[type='submit'] {
+	width: 200px;
+	padding: 1em 2em;
+	text-transform: capitalize;
+	margin: 1em 0 2em;
 }
 
 footer {
